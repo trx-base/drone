@@ -20,9 +20,9 @@ services:
       DRONE_SERVER_PROTO: ${DRONE_SERVER_PROTO}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.`$NAME`.rule=Host(`$DOMAIN`)"
-      - "traefik.http.routers.`$NAME`.entrypoints=https"
-      - "traefik.http.routers.`$NAME`.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.`$COMPOSE_PROJECT_NAME`.rule=Host(`$DOMAIN`)"
+      - "traefik.http.routers.`$COMPOSE_PROJECT_NAME`.entrypoints=https"
+      - "traefik.http.routers.`$COMPOSE_PROJECT_NAME`.tls.certresolver=letsencrypt"
 
   drone-runner:
     image: drone/drone-runner-docker:1
